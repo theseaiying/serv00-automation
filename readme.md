@@ -37,7 +37,7 @@ tg交流群：[https://t.me/zzzjsjl](https://t.me/zzzjsjl)
 - **新版已经将pushplus推送移除，请勿添加PUSHPLUS_TOKEN变量**
 - **新版已经将pushplus推送移除，请勿添加PUSHPLUS_TOKEN变量**
 - **新版已经将pushplus推送移除，请勿添加PUSHPLUS_TOKEN变量**
-- TELEGRAM_TOKEN：您的 Telegram Bot API Token。示例：`733255939:AAHsoQf-3lOoc1xC8le2d58qlfrCqEXzu74`
+- TELEGRAM_BOT_TOKEN：您的 Telegram Bot API Token。示例：`733255939:AAHsoQf-3lOoc1xC8le2d58qlfrCqEXzu74`
 - TELEGRAM_CHAT_ID：您的 Telegram Chat ID（可以是您的私人聊天或群组）。示例：`5329499650`
 - PUSH：推送渠道值为`mail`或者`telegram`。示例：`mail`
 - MAIL：接收通知的邮箱。示例：`mail@mail.com`
@@ -73,3 +73,9 @@ tg交流群：[https://t.me/zzzjsjl](https://t.me/zzzjsjl)
 - **更新和删除**: 如果需要更新或删除 Secrets，可以通过仓库的 Secrets 页面进行管理。
 
 通过以上步骤，你就可以成功将代码 fork 到你的仓库下并运行它了。如果需要进一步的帮助或有其他问题，请随时告知！
+
+### 赞助
+感谢 [YxVM](https://yxvm.com/) 提供服务器赞助
+[![YxVM](https://yxvm.com/assets/img/logo.png)](https://yxvm.com/ "yxvm.com")
+
+[![Powered by DartNode](https://dartnode.com/branding/DN-Open-Source-sm.png)](https://dartnode.com "Powered by DartNode - Free VPS for Open Source")
