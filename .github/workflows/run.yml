@@ -26,10 +26,6 @@ jobs:
       - name: Run Python script
         env:
           SSH_INFO: ${{ secrets.SSH_INFO }}
-          PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
-          MAIL: ${{ secrets.MAIL }}
-          PUSH: ${{ secrets.PUSH }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          SCKEY: ${{ secrets.SCKEY }}
           
         run: python run.py
