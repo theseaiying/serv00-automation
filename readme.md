@@ -1,74 +1,22 @@
+# 说明
 
-# 说明 
+因 serv00 要求 90 天未登录会清理账号，本仓库通过 GitHub Actions 定期 SSH 登录并用 Server酱推送结果，帮助保持账号活跃。
 
-因serv00服务器要求，如果用户帐户在 90 天内未通过 DevilWEB 或 SSH 面板正确登录，则该帐户将自动从系统中删除，并且无法恢复该帐户收集的数据。
+## 准备
+- Fork 本仓库，准备好 serv00 账号。
+- 在 GitHub 仓库 Settings > Secrets 配置：
+  - `SSH_INFO`：包含 SSH 连接信息的 JSON 字符串，例如：
+    ```json
+    [
+      {"hostname": "服务器号", "username": "用户名", "password": "密码"},
+      {"hostname": "s5.serv00.com", "username": "user", "password": "password"}
+    ]
+    ```
+  - `SCKEY`：Server酱推送密钥。
 
-本仓库将用于定时自动化登录serv00的SSH连接执行指令并推送通知，可以实现定期登录保号的作用
+## 运行
+- Actions 页面手动触发一次 “Run SSH Login” 验证。
+- 默认计划：每月 5 日 11:00 UTC（北京时间 19:00）。如需修改，在 `.github/workflows/run.yml` 调整 `cron`。
 
-tg交流群：[https://t.me/zzzjsjl](https://t.me/zzzjsjl)
-
-**希望大家点个Star🌟🌟🌟支持下**
-
-### 准备工作
-
-- 一个GitHub账号。
-- Fork本仓库
-- 准备好serv00账号
-- 申请好 Server酱的 `SCKEY`（[Server酱](https://sct.ftqq.com/)）
-
-- 在您的 GitHub 仓库中设置以下 Secrets：
-
-
-
-### 配置Secrets
-
-- 进入你fork本仓库后自己的仓库页面>“Settings” > “Secrets”中添加以下Secrets：
-
-- `SSH_INFO`：包含SSH连接信息的JSON字符串。以下是示例
-
-  ```json
-  [
-    {"hostname": "服务器号", "username": "用户名", "password": "密码"},
-    {"hostname": "s5.serv00.com", "username": "user", "password": "password"},
-    {"hostname": "s6.serv00.com", "username": "user6", "password": "password6"}
-  ]
-  ```
-- `SCKEY`：Server酱的推送密钥，用于接收微信通知。
-
-
-
-
-
-
-### 测试运行
-
-- 在GitHub仓库的“Actions”选项卡中，手动触发运行一次工作流程。
-- “Actions”页面>"Run SSH Login">"Run workflow">"Run workflow"
-- 检查运行结果，没有报错说明就是运行成功了，可以点击运行记录的列表进去查看运行的详细情况
-
-
-
-### 定时自动运行
-
-- 此工作流默认每月的 5号 北京时间 19 点运行
-
-- 可以根据自己的需求调整运行时间
-
-  ```yaml
-  - cron: '0 11 5 * *'  # 每月的 5号 北京时间 19 点运行
-  ```
-
-  
-
-### 注意事项
-
-- **保密性**: Secrets 是敏感信息，请确保不要将它们泄露到公共代码库或未授权的人员。
-- **更新和删除**: 如果需要更新或删除 Secrets，可以通过仓库的 Secrets 页面进行管理。
-
-通过以上步骤，你就可以成功将代码 fork 到你的仓库下并运行它了。如果需要进一步的帮助或有其他问题，请随时告知！
-
-### 赞助
-感谢 [YxVM](https://yxvm.com/) 提供服务器赞助
-[![YxVM](https://yxvm.com/assets/img/logo.png)](https://yxvm.com/ "yxvm.com")
-
-[![Powered by DartNode](https://dartnode.com/branding/DN-Open-Source-sm.png)](https://dartnode.com "Powered by DartNode - Free VPS for Open Source")
+## 注意
+- Secrets 含敏感信息，请勿泄露。
